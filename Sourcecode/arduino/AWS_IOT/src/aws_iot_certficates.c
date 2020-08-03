@@ -1,0 +1,107 @@
+/*
+ * Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Additions Copyright 2016 Espressif Systems (Shanghai) PTE LTD
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License").
+ * You may not use this file except in compliance with the License.
+ * A copy of the License is located at
+ *
+ *  http://aws.amazon.com/apache2.0
+ *
+ * or in the "license" file accompanying this file. This file is distributed
+ * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
+ * express or implied. See the License for the specific language governing
+ * permissions and limitations under the License.
+ */
+
+/**
+ * @file aws_iot_certifcates.c
+ * @brief File to store the AWS certificates in the form of arrays
+ */
+
+
+#ifdef __cplusplus
+extern "C" {
+#endif
+
+const char aws_root_ca_pem[] = R"(-----BEGIN CERTIFICATE-----
+MIIDQTCCAimgAwIBAgITBmyfz5m/jAo54vB4ikPmljZbyjANBgkqhkiG9w0BAQsF
+ADA5MQswCQYDVQQGEwJVUzEPMA0GA1UEChMGQW1hem9uMRkwFwYDVQQDExBBbWF6
+b24gUm9vdCBDQSAxMB4XDTE1MDUyNjAwMDAwMFoXDTM4MDExNzAwMDAwMFowOTEL
+MAkGA1UEBhMCVVMxDzANBgNVBAoTBkFtYXpvbjEZMBcGA1UEAxMQQW1hem9uIFJv
+b3QgQ0EgMTCCASIwDQYJKoZIhvcNAQEBBQADggEPADCCAQoCggEBALJ4gHHKeNXj
+ca9HgFB0fW7Y14h29Jlo91ghYPl0hAEvrAIthtOgQ3pOsqTQNroBvo3bSMgHFzZM
+9O6II8c+6zf1tRn4SWiw3te5djgdYZ6k/oI2peVKVuRF4fn9tBb6dNqcmzU5L/qw
+IFAGbHrQgLKm+a/sRxmPUDgH3KKHOVj4utWp+UhnMJbulHheb4mjUcAwhmahRWa6
+VOujw5H5SNz/0egwLX0tdHA114gk957EWW67c4cX8jJGKLhD+rcdqsq08p8kDi1L
+93FcXmn/6pUCyziKrlA4b9v7LWIbxcceVOF34GfID5yHI9Y/QCB/IIDEgEw+OyQm
+jgSubJrIqg0CAwEAAaNCMEAwDwYDVR0TAQH/BAUwAwEB/zAOBgNVHQ8BAf8EBAMC
+AYYwHQYDVR0OBBYEFIQYzIU07LwMlJQuCFmcx7IQTgoIMA0GCSqGSIb3DQEBCwUA
+A4IBAQCY8jdaQZChGsV2USggNiMOruYou6r4lK5IpDB/G/wkjUu0yKGX9rbxenDI
+U5PMCCjjmCXPI6T53iHTfIUJrU6adTrCC2qJeHZERxhlbI1Bjjt/msv0tadQ1wUs
+N+gDS63pYaACbvXy8MWy7Vu33PqUXHeeE6V/Uq2V8viTO96LXFvKWlJbYK8U90vv
+o/ufQJVtMVT8QtPHRh8jrdkPSHCa2XV4cdFyQzR1bldZwgJcJmApzyMZFo6IQ6XU
+5MsI+yMRQ+hDKXJioaldXgjUkK642M4UwtBV8ob2xJNDd2ZhwLnoQdeXeGADbkpy
+rqXRfboQnoZsG4q5WTP468SQvvG5
+-----END CERTIFICATE-----
+)";
+
+
+
+const char certificate_pem_crt[] = R"(-----BEGIN CERTIFICATE-----
+MIIDWjCCAkKgAwIBAgIVAIIKwjjLQUVOPJIijVJVTqwYEkeHMA0GCSqGSIb3DQEB
+CwUAME0xSzBJBgNVBAsMQkFtYXpvbiBXZWIgU2VydmljZXMgTz1BbWF6b24uY29t
+IEluYy4gTD1TZWF0dGxlIFNUPVdhc2hpbmd0b24gQz1VUzAeFw0yMDA3MzAxMzAx
+NTZaFw00OTEyMzEyMzU5NTlaMB4xHDAaBgNVBAMME0FXUyBJb1QgQ2VydGlmaWNh
+dGUwggEiMA0GCSqGSIb3DQEBAQUAA4IBDwAwggEKAoIBAQDPk7YJEoDoP5UY3BNv
+EQ7IMNsnxEGuAZBnj2iIGqBmkj0+9PQFsZ3lhrHOUJP4+bz8W+UJuvM05WKs5gFB
+Au/zQA/i/tdSe01/Q+KPQ8rK7QPtwIqNIVlHlQZqfN0crYJMDjj9pE7C69OnlKc/
+Vqqm1iU0SakSBgT7P5UkfNr1+oiZG+EZz9w3dJHxi/HNCYJfjClhAnTK13G3BHVt
+S6r63kRPE5tPP1kCQq5GHljpJnrQxabUXDxETv27DHbk3pfXPiEhenWBtQ4YoaL8
+qBEIBTxZ9KTa4cudmKCYdzj4yjcfNuMsRzLO7+hr6KpMu+8EQSiJRnJW6mhRNbiV
+KykHAgMBAAGjYDBeMB8GA1UdIwQYMBaAFNVHU3+cATFCdYlI/M5h/we9l1eAMB0G
+A1UdDgQWBBRpEyzFtV4ctUE9BG5gvl/ZATjlXzAMBgNVHRMBAf8EAjAAMA4GA1Ud
+DwEB/wQEAwIHgDANBgkqhkiG9w0BAQsFAAOCAQEAjqtCAd9uN8/5NpoInznFFdXl
+fbgQ6IUuR187mAdrYHqaVqU0WGZR3S5o3WyUo9D1yemUpg74tEPjKFM4YrWHrLh7
+DxAMo6OvGDDGE/4mpmX2nvYgRCYCEg/+/lO0nuxvW55s+mE9AuNa0r3RlH5BporC
+Uftj/wJu7Kfpg1zNavt5bxK8G8vFQswRqEwDmD1+0Hw7D0cnnywZO7llbEvtC+oI
+KixGOh4htsCK4r1YgEhXuEFhz0MpZxo6vdo3FGEIs/ac55bnBTHaSouGUaCMNLcO
+ba/CuxM0Wzt3122Hcx+nco8YgL2pn60yOlvng2wIarqGSnQddy5/gLN2Og/kLA==
+-----END CERTIFICATE-----
+)";
+
+
+
+const char private_pem_key[] = R"(-----BEGIN RSA PRIVATE KEY-----
+MIIEpQIBAAKCAQEAz5O2CRKA6D+VGNwTbxEOyDDbJ8RBrgGQZ49oiBqgZpI9PvT0
+BbGd5YaxzlCT+Pm8/FvlCbrzNOVirOYBQQLv80AP4v7XUntNf0Pij0PKyu0D7cCK
+jSFZR5UGanzdHK2CTA44/aROwuvTp5SnP1aqptYlNEmpEgYE+z+VJHza9fqImRvh
+Gc/cN3SR8YvxzQmCX4wpYQJ0ytdxtwR1bUuq+t5ETxObTz9ZAkKuRh5Y6SZ60MWm
+1Fw8RE79uwx25N6X1z4hIXp1gbUOGKGi/KgRCAU8WfSk2uHLnZigmHc4+Mo3Hzbj
+LEcyzu/oa+iqTLvvBEEoiUZyVupoUTW4lSspBwIDAQABAoIBAHadx+YDRtpwivi7
+ufc73iCTmohs48NVbXlgP7GW1ZYHdywkudUPHFVu1Og6r3QU8eObd5RJ2nSdp/d5
+L7pAvXFZaDqkudKOV0ikODD54kZ3jkksP4BKUERRamsrkwayN8TSU8rNO5yzOi2H
+CtNs6PORZ40rkouUGQCh4s4I8u6gBaZig5+kc2lLCQUr+8Wgjub1p3VfeW9i4hfB
+yn7ntv3kOWo3hNpSMsxTT0w0J1HlPt3qHvzscDgMXFl789J3Z+jzwAOmUnNIOb40
+8roOL7TbB2SI+Dr2+++ECYqSgoNE3ZDMh75vEhrkS4MqUMe8MooaT/SveGQJfz+X
+54AyiHECgYEA9npmaolY2YJVRBc1KrU8l66QZ7gb8kw1cfUW4UEGoOuBEIRgQxWp
+fu/ugOkngZkoESRrDWdOFvvtq01pIdqQQRhwttDMwtFFHyCkuGQGBkPvNtq+SXOI
+LTzYnqHfElP0LY/gG9DSHlqFTF2q2y3bQs4nd7al3B/NpchoPqf+OG0CgYEA15iW
+9jpxYmWCfTky9yazQGpTMmpxPkSGyFQh7OyIC1kLpHvErEBfeO57MstIp6qv5Eya
+7ng6lYXe8n74s8EEnoTBWbHTikrd2Ifc3SZ0nPLn9dUROEgrrRJKA84ETJyALJo4
+jBWeEEWBrzaS37exEQJ8AKTp2+cQ7Nqler7+JsMCgYEAgWHrFQ2YCEV0QNP14r9U
+WUMXJnrsoJoEjBddtUyPEDXPgD4c0dozKSEFj8HULSGaeLUnRNfvk/0W2489GrpC
+cwlDUZP1iGaV5CscjHZk+zD6B094B9KPrz97bnoGQPa0/J3DxJYvViOqSVX59Cf0
+KvNQoHTOR+ih6N50aj+BIVkCgYEAkn4xXX/amURmRRY/piYauJNGksQ2zFudxbM9
+FhKmYieQPKSIv45CERbiiWINrTfSqmrO/2icTgsXsWhLL0DhFaEZDAxDs/0o/r9a
+eL5vkFGRAb5UJA0N+FysBCfRTgktIqFr+Oubam0AMIEBjZfwbaFlhr6H1Q8NthLf
+TCdI5CcCgYEAmBr2FvexFb2d7CSr/6Ni6EG+tCce6YfTUIOUWCW/E+g71GCEgIvz
+Sch4RtF8IZkamX+b7aftc25CrgM/5F98EPLVKRaeCBvMbRyIsrz58IX+YPIAjKx8
+SMkSolWhnWDhdvhrZGoOAtgjvHKkgQ58bB6HxK5Ke/3oq3DZklbFX10=
+-----END RSA PRIVATE KEY-----
+)";
+
+
+#ifdef __cplusplus
+}
+#endif
